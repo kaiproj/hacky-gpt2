@@ -2,4 +2,5 @@
 
 set -e
 
+[[ -z "${NO_INIT}" ]] || exit 0
 python init.py

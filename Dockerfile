@@ -12,6 +12,10 @@ COPY bin/ bin
 
 ENV PATH="/app/bin:${PATH}"
 
+ARG NO_INIT
+ENV NO_INIT=$NO_INIT
+RUN init
+
 #ARG NB_USER="jovyan"
 #ARG NB_UID="1000"
 #ARG NB_GID="100"
