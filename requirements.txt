@@ -5,3 +5,6 @@ torch
 transformers
 xformers
 notebook
+
+jupytext
+#nbconvert
