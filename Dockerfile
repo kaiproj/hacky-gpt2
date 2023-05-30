@@ -7,7 +7,7 @@ COPY requirements.txt /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY *.py .
+COPY init.py .
 COPY bin/ bin
 
 ENV PATH="/app/bin:${PATH}"
@@ -15,6 +15,13 @@ ENV PATH="/app/bin:${PATH}"
 ARG NO_INIT
 ENV NO_INIT=$NO_INIT
 RUN init
+
+COPY *.py .
+COPY data data
+
+ARG TRAIN_DATASET_PATH
+ENV TRAIN_DATASET_PATH=$TRAIN_DATASET_PATH
+RUN train
 
 #ARG NB_USER="jovyan"
 #ARG NB_UID="1000"

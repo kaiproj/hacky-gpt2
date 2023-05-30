@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+[[ -z "${TRAIN_DATASET_PATH}" ]] && exit 0
+python train.py ${TRAIN_DATASET_PATH}
